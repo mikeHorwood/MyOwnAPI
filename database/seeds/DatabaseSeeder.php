@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         Maker::truncate();
         Model::unguard();
 
-        $this->call('MakersSeed');
+        $this->call('MakerSeed');
         $this->call('VehiclesSeed');
     }
 }

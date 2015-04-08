@@ -9,7 +9,7 @@ class Maker extends Model
 
 	protected $fillable = ['name', 'phone'];
 
-	protected $hidden = ['id', 'created_at', 'updated_at'];
+	protected $hidden = ['id', 'updated_at', 'created_at'];
 
 	public function vehicles()
 	{

@@ -16,7 +16,7 @@ class MakerSeed extends Seeder
      */
     public function run()
     {
-        $faker = Facker::create();
+        $faker = Faker::create();
 
         for ($i = 0; $i < 6; $i++)
         {

@@ -7,7 +7,7 @@ use App\Vehicle;
 
 use Faker\Factory as Faker;
 
-class VehicleSeed extends Seeder
+class VehiclesSeed extends Seeder
 {
     /**
      * Run the database seeds.
