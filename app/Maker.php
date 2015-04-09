@@ -16,4 +16,3 @@ class Maker extends Model
 		return $this->hasMany('App\Vehicle');
 	}
 }
-}

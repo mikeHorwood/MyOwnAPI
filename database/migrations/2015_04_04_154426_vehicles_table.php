@@ -14,8 +14,8 @@ class VehiclesTable extends Migration {
 	{
 		Schema::create('vehicles', function(Blueprint $table)
 		{
-			$table->increments('series');
-			$table->string('colour');
+			$table->increments('serie');
+			$table->string('color');
 			$table->integer('power');
 			$table->float('capacity');
 			$table->float('speed');
@@ -36,3 +36,4 @@ class VehiclesTable extends Migration {
 	}
 
 }
+

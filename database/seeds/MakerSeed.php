@@ -9,6 +9,7 @@ use Faker\Factory as Faker;
 
 class MakerSeed extends Seeder
 {
+
     /**
      * Run the database seeds.
      *
@@ -18,15 +19,15 @@ class MakerSeed extends Seeder
     {
         $faker = Faker::create();
 
-        for ($i = 0; $i < 6; $i++)
+        for($i = 0; $i < 6; $i++)
         {
             Maker::create
             ([
                 'name' => $faker->word(),
                 'phone' => $faker->randomDigit(5)
             ]);
-
         }
-      
     }
+
 }
+

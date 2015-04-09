@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Maker;
 
 class MakerController extends Controller
 {
@@ -13,7 +14,9 @@ class MakerController extends Controller
      */
     public function index()
     {
-        return 'On index'
+        $makers = Maker::all();
+
+        return response()->json($makers, 200);
     }
 
 

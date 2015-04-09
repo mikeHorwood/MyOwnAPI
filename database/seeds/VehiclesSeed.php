@@ -9,6 +9,7 @@ use Faker\Factory as Faker;
 
 class VehiclesSeed extends Seeder
 {
+
     /**
      * Run the database seeds.
      *
@@ -18,18 +19,18 @@ class VehiclesSeed extends Seeder
     {
         $faker = Faker::create();
 
-        for ($i = 0; $i < 30; $i++)
+        for($i = 0; $i < 30; $i++)
         {
             Vehicle::create
             ([
-                'colour' => $faker->safeColorName(),
+                'color' => $faker->safeColorName(),
                 'power' => $faker->randomNumber(),
                 'capacity' => $faker->randomFloat(),
                 'speed' => $faker->randomFloat(),
                 'maker_id' => $faker->numberBetween(1,5)
             ]);
-
         }
-      
     }
+
 }
+
