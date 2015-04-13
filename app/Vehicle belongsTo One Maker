@@ -3,7 +3,7 @@ Vehicle belongsTo ONE Maker
 Maker HasMany Vehicles
 
 Vehicle
-	#series
+	#serie
 	- Colour
 	- Power
 	- Capacity

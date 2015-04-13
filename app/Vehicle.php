@@ -7,11 +7,11 @@ class Vehicle extends Model
 
 	protected $table = 'vehicles';
 
-	protected $primaryKey = 'series';
+	protected $primaryKey = 'serie';
 
 	protected $fillable = ['colour', 'power', 'capacity', 'speed', 'maker_id'];
 
-	protected $hidden = ['series', 'created_at', 'updated_at', 'maker_id'];
+	protected $hidden = ['serie', 'created_at', 'updated_at', 'maker_id'];
 
 	public function maker()
 	{
