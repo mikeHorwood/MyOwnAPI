@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Maker;
+use App\Vehicle;
 use App\Http\Requests\CreateMakerRequest;
 
 class MakerController extends Controller
@@ -60,10 +61,27 @@ class MakerController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update(CreateMakerRequest $request, $id)
     {
-        //
+        $maker = Maker::find($id);
+
+         if(!$maker)
+        {
+            return response()->json(['message' => 'This maker does not exist', 'code' => 404], 404);
+        }
+
+        $name = $request->get('name');
+        $phone = $request->get('phone');
+
+        $maker->name = $name;
+        $maker->phone = $phone;
+
+        $maker->save();
+
+        return response()->json(['message' => 'The maker has been updated'], 200);
     }
+
+
 
     /**
      * Remove the specified resource from storage.
@@ -73,6 +91,22 @@ class MakerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $maker = Maker::find($id);
+
+         if(!$maker)
+        {
+            return response()->json(['message' => 'This maker does not exist', 'code' => 404], 404);
+        }
+
+        $vehicles = $maker->vehicles;
+
+        if(sizeof($vehicles)>0)
+        {
+            return response()->json(['message' => 'This maker has associated vehicles. Please delete the associated vehicles first', 'code' => 409], 409);
+        }
+
+        $maker->delete();
+
+        return response()->json(['message' => 'This maker has been deleted', 'code' => 200], 200);
     }
 }
