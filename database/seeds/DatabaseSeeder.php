@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use App\Maker;
 use App\User;
 
-class DatabaseSeeder extends Seeder {
+class DatabaseSeeder extends Seeder 
+{
 
     /**
      * Run the database seeds.

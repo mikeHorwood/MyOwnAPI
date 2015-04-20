@@ -16,7 +16,7 @@ class CreateUsers extends Migration {
 		{
 			$table->increments('id');
 			$table->string('email')->unique();
-			$table->string('password',60);
+			$table->string('password', 60);
 			$table->timestamps();
 		});
 	}
@@ -32,4 +32,3 @@ class CreateUsers extends Migration {
 	}
 
 }
-
